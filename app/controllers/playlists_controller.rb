@@ -3,7 +3,7 @@ class PlaylistsController < ApplicationController
   def index
     user = RSpotify::User.new(session[:user])
     @playlists = user.playlists
-    
+    raise 'hell'
   end
 
 #will be where users create new playlists

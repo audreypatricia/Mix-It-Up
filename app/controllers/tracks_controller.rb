@@ -8,6 +8,7 @@ class TracksController < ApplicationController
     playlist_id = params[:format]
     @playlist = RSpotify::Playlist.find(user.id, playlist_id)
     @tracks = @playlist.tracks
+  
   end
 
 end
