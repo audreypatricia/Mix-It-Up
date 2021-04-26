@@ -1,0 +1,8 @@
+<h1>Hello from users index page </h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.submit "Log-in user" %>
+<% end %>

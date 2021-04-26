@@ -1,0 +1,11 @@
+<h1><%= @playlist.name %> tracks </h1>
+
+<ol>
+  <% @tracks.each do |track| %>
+    <li><%= track.name %></li>
+  <% end %>
+</ol>
+
+<% @tracks.each do |track| %>
+  <%= image_tag track.album.images.first["url"], :class => "thumb" %>
+<% end %>
