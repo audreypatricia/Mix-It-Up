@@ -21,7 +21,7 @@ module SpotifyPlaylistMaker
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-
+    config.assets.initialize_on_precompile = false
     # RSpotify.authenticate(ENV["SPOTIFY_KEY"], ENV["SPOTIFY_SECRET"])
 
 
