@@ -28,11 +28,20 @@
 
 .logo_header{
   margin-top: 8px;
+  margin-bottom: 3%;
 }
 
-.welcome a:hover{
+.welcome-container h1{
+  margin-bottom: 3%;
+}
+.welcome-container h4{
+  margin-bottom: 3%;
+}
+
+.welcome-container a:hover{
   color:  #1DB954;
   background-color: white;
+  border-color: white;
 
 }
 

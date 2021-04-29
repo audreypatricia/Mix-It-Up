@@ -2,7 +2,7 @@
 <% if session[:user].present? %>
   <div class="welcome-container">
     <h1>Welcome <%= @spotify_user.display_name %> 👋</h1>
-    <h4>Want to discover new music to your taste fast?</h4>
+    <h4><em>Want to discover new music to your taste fast?</em></h4>
     <div class="row">
       <div class="col-md-4">
         <%= image_tag 'hover.svg', :class => 'welcome_icon' %>
