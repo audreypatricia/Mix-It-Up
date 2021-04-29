@@ -38,7 +38,7 @@ $(document).ready(function(){
       localStorage.setItem("saved_artist", JSON.stringify(saved_artist));
       localStorage.setItem("saved_images", JSON.stringify(saved_images));
 
-      let snackbar = document.getElementById("snackbar");
+      let snackbar = document.getElementById("track-snackbar");
       snackbar.className = "show";
       setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
     });

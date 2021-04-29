@@ -23,7 +23,7 @@ $(document).ready(function(){
     } else {
       $track.hover(function(){
         console.log("no music");
-        let snackbar = document.getElementById("snackbar");
+        let snackbar = document.getElementById("music-snackbar");
         snackbar.className = "show";
         setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
       })

@@ -3,19 +3,25 @@
 <% num_of_tracks = @tracks.length %>
 <% num = num_of_tracks / 2 %>
 
-<div class="tracks_list">
+<div class="row tracks_list">
 
   <% @tracks.each_with_index do |track, index| %>
-    <div class="track">
+
       <% if track.album.images != nil %>
-        <%= image_tag track.album.images.first["url"], :class => "playlist-tracks", :id => "#{index}" %>
+        <div class="col-md-6">
+          <%= image_tag track.album.images.first["url"], :class => "playlist-tracks", :id => "#{index}" %>
+          <%= link_to track.name, discover_path(id: track.artists.first.id) %>
+        </div>
+
       <% else %>
-        <%= image_tag 'no_image.png', :class => "playlist-tracks", :id => "#{index}" %>
+        <div class="col-md-6">
+          <%= image_tag 'no_image.png', :class => "playlist-tracks", :id => "#{index}" %>
+          <%= link_to track.name, discover_path(id: track.artists.first.id) %>
+        </div>
       <% end %>
-      <%= link_to track.name, discover_path(id: track.artists.first.id) %>
-    </div>
+
   <% end %>
 
 </div>
 
-<div id="snackbar">No music preview to display</div>
+<div class="snackbar" id="music-snackbar">No music preview to display</div>
