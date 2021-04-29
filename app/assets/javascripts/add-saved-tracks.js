@@ -6,9 +6,6 @@ $(document).ready(function(){
     return;
   }
 
-
-  console.log("hello saved track section")
-
   saved_uris = JSON.parse(localStorage.getItem("saved_uris"));
   saved_track_names = JSON.parse(localStorage.getItem("saved_track_names"));
   saved_artist = JSON.parse(localStorage.getItem("saved_artist"));
@@ -30,9 +27,7 @@ $(document).ready(function(){
 
   let remove_saved = function(arr, index){
     array1 = arr.slice(0, index);
-    console.log(array1);
     array2 = arr.slice(parseInt(index) + 1);
-    console.log(array2);
     finalArray = array1.concat(array2);
     return finalArray;
   }
@@ -42,7 +37,6 @@ $(document).ready(function(){
 
     $(remove_buttons[i]).on("click", function(){
       id = $(remove_buttons[i]).attr("id");
-      console.log(id)
       saved_uris = remove_saved(saved_uris, id);
       saved_track_names = remove_saved(saved_track_names, id);
       saved_artist = remove_saved(saved_artist, id);

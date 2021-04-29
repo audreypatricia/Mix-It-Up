@@ -24,8 +24,6 @@ $(document).ready(function(){
   }
 
 
-  console.log("running here");
-
   for(let i = 0; i < tracks.length; i++){
     let $track = $(tracks[i]);
     $track.on('click', function(){

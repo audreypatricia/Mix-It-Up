@@ -4,11 +4,8 @@ $(document).ready(function(){
     tracks = $('.playlist-tracks');
 
     if(tracks === 0){
-      console.log('bye');
       return;
     }
-
-    console.log("yay i'm working");
 
   for(let i = 0; i < tracks.length; i++){
     let $track = $(tracks[i]);
