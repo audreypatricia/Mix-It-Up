@@ -24,33 +24,47 @@ class CreateController < ApplicationController
 
   def playlist
 
-    selected_playlist = params[:playlist]
-    track_uris = params[:track_uris]
+    if params[:playlist] != nil && params[:playlistName] == nil
 
-    # manipulate track_uri string into an array
-    track_uris = track_uris.split(',')
+      selected_playlist = params[:playlist]
+      track_uris = params[:track_uris]
 
-    # get user
-    user = RSpotify::User.new(session[:user]);
+      # manipulate track_uri string into an array
+      track_uris = track_uris.split(',')
 
-    user_playlists = user.playlists
+      # get user
+      user = RSpotify::User.new(session[:user]);
 
-    playlist_id = ""
+      user_playlists = user.playlists
 
-    # find the playlist they selected
-    user_playlists.each do |playlist|
-      if playlist.name == selected_playlist
-        playlist_id = playlist.id
-        break
+      playlist_id = ""
+
+      # find the playlist they selected
+      user_playlists.each do |playlist|
+        if playlist.name == selected_playlist
+          playlist_id = playlist.id
+          break
+        end
       end
+
+      # push the new tracks into playlist
+      playlist =  RSpotify::Playlist.find(session[:user]["info"]["id"], playlist_id)
+      playlist.add_tracks!(track_uris)
+
+
+      redirect_to success_path
+
+    elsif params[:playlistName] != nil && params[:playlist] == nil
+      track_uris = params[:track_uris_new_playlist]
+      track_uris = track_uris.split(',')
+      new_playlist_name = params[:playlistName]
+      #get user
+      user = RSpotify::User.new(session[:user]);
+      playlist = user.create_playlist!(new_playlist_name)
+      playlist.add_tracks!(track_uris)
+
+      redirect_to success_path
     end
-
-    # push the new tracks into playlist
-    playlist =  RSpotify::Playlist.find(session[:user]["info"]["id"], playlist_id)
-    playlist.add_tracks!(track_uris)
-
-
-    redirect_to success_path
   end
 
   def success

@@ -37,3 +37,22 @@
   margin-left: 47%;
   margin-top: 5%;
 }
+
+.create_playlist{
+  padding: 7px;
+  border-radius: 7px;
+  border: none;
+  margin-right: 3%;
+}
+
+.add_tracks_options{
+  text-align: center;
+}
+
+#playlistName{
+  width: 42%;
+}
+
+.add_tracks_options h5{
+  margin-bottom: 3%;
+}

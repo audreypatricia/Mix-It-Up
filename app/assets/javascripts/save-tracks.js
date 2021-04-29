@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-
+  $('.create_playlist').attr("placeholder", "New playlist name");
 
   if(localStorage.getItem("saved_uris") === null){
     saved_uris = [];

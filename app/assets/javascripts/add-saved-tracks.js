@@ -58,12 +58,7 @@ $(document).ready(function(){
   }
 
   $($("#track_uris")).val(JSON.parse(localStorage.getItem("saved_uris")))
-
-
-// $($('.add_to_existing_playlist')).on("click", function(){
-//   let playlist_choice = $('#playlist').children("option:selected").val();
-//
-// });
+  $($("#track_uris_new_playlist")).val(JSON.parse(localStorage.getItem("saved_uris")))
 
 
 
