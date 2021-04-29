@@ -12,13 +12,23 @@ $(document).ready(function(){
 
   for(let i = 0; i < tracks.length; i++){
     let $track = $(tracks[i]);
-    let audio = new Audio(gon.track_previews[i]);
-    $track.hover(function(){
-      audio.load();
-      audio.play();
-    }, function(){
-      audio.pause();
-    });
+    if(gon.track_previews[i] != null){
+      let audio = new Audio(gon.track_previews[i]);
+      $track.hover(function(){
+        audio.load();
+        audio.play();
+      }, function(){
+        audio.pause();
+      });
+    } else {
+      $track.hover(function(){
+        console.log("no music");
+        let snackbar = document.getElementById("snackbar");
+        snackbar.className = "show";
+        setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+      })
+    }
+
   }
 
 
