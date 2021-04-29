@@ -15,7 +15,7 @@ $(document).ready(function(){
   saved_images = JSON.parse(localStorage.getItem("saved_images"));
 
   if (JSON.parse(localStorage.getItem("saved_uris")) != null) {
-    for (i = 0; i < saved_track_names.length; i++) {
+    for (let i = 0; i < saved_track_names.length; i++) {
 
       img = `<img src="${saved_images[i]}" class="saved_images">`
       element = `<li class="saved_track_item">${saved_track_names[i]} <p class="saved_track_artist"><em> by ${saved_artist[i]}</em></p></li>`
