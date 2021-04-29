@@ -22,3 +22,18 @@
 .hidden {
   visibility: hidden;
 }
+
+.add_tracks_button{
+  margin: 3%;
+}
+
+.custom-select{
+  width: 50%;
+}
+
+.success_gif{
+  width: 5em;
+  display: block;
+  margin-left: 47%;
+  margin-top: 5%;
+}

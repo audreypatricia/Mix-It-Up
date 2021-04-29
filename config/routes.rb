@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   get '/save' => 'create#create'
   post '/save' => 'create#playlist'
+  get '/success' => 'create#success'
 
 end

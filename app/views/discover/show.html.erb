@@ -1,49 +1,51 @@
-<h2 class="discover_title">Discover more</h2>
+<div class="discover-container">
+  <h2 class="discover_title">Discover more</h2>
 
 
-<br>
+  <br>
 
-<p class="discover_header">Similar Tracks</p>
+  <p class="discover_header">Similar Tracks</p>
 
-  <% @top_tracks.each_with_index do |track, index| %>
+    <% @top_tracks.each_with_index do |track, index| %>
+      <div class="item">
+        <% if track.album.images != nil %>
+          <%= image_tag track.album.images.first["url"], :class => 'playlist-tracks tracks', :id => "#{index}"%>
+        <% else %>
+          <%= image_tag 'no_image.png', :class => 'playlist-tracks tracks', :id => "#{index}" %>
+        <% end %>
+        <span class="caption"><%= track.name %></span>
+      </div>
+    <% end %>
+
+  <br>
+  <br>
+
+  <p class="discover_header">Albums based on this artist</p>
+
+  <% @albums.each do |album| %>
+
+    <% if album.images != nil %>
+      <%= link_to (image_tag album.images.first["url"], :class => 'album'), discover_albums_path(id: album.id) %>
+    <% else %>
+      <%= link_to (image_tag 'no_image.png', :class => 'album'), discover_albums_path(id: album.id) %>
+    <% end %>
+  <% end %>
+
+  <br>
+  <br>
+
+  <p class="discover_header">Related Artists</p>
+
+  <% @related_artist.each do |artist| %>
     <div class="item">
-      <% if track.album.images != nil %>
-        <%= image_tag track.album.images.first["url"], :class => 'playlist-tracks tracks', :id => "#{index}"%>
+      <% if artist.images != nil %>
+        <%= link_to (image_tag artist.images.first["url"], :class =>  'artist'), discover_artist_path(id: artist.id)  if artist.images.present? %>
       <% else %>
-        <%= image_tag 'no_image.png', :class => 'playlist-tracks tracks', :id => "#{index}" %>
+        <%= link_to (image_tag 'no_image.png', :class =>  'artist'), discover_artist_path(id: artist.id)  if artist.images.present? %>
       <% end %>
-      <span class="caption"><%= track.name %></span>
+      <span class="caption"><%= artist.name %></span>
     </div>
   <% end %>
 
-<br>
-<br>
-
-<p class="discover_header">Albums based on this artist</p>
-
-<% @albums.each do |album| %>
-
-  <% if album.images != nil %>
-    <%= link_to (image_tag album.images.first["url"], :class => 'album'), discover_albums_path(id: album.id) %>
-  <% else %>
-    <%= link_to (image_tag 'no_image.png', :class => 'album'), discover_albums_path(id: album.id) %>
-  <% end %>
-<% end %>
-
-<br>
-<br>
-
-<p class="discover_header">Related Artists</p>
-
-<% @related_artist.each do |artist| %>
-  <div class="item">
-    <% if artist.images != nil %>
-      <%= link_to (image_tag artist.images.first["url"], :class =>  'artist'), discover_artist_path(id: artist.id)  if artist.images.present? %>
-    <% else %>
-      <%= link_to (image_tag 'no_image.png', :class =>  'artist'), discover_artist_path(id: artist.id)  if artist.images.present? %>
-    <% end %>
-    <span class="caption"><%= artist.name %></span>
-  </div>
-<% end %>
-
-<div class="snackbar" id="track-snackbar">Added to saved tracks!</div>
+  <div class="snackbar" id="track-snackbar">Added to saved tracks!</div>
+</div>

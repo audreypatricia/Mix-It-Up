@@ -6,18 +6,22 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag 'hover.svg', :class => 'welcome_icon' %>
-        <p>Hover to listen</p>
+        <p class="brief">Hover to listen</p>
+        <p class= "instruction_desc">Anything you can hover over, you can click and add to saved tracks</p>
       </div>
       <div class="col-md-4">
         <%= image_tag 'click.svg', :class => 'welcome_icon' %>
-        <p>Click to dive deeper</p>
+        <p class="brief">Click to dive deeper</p>
+        <p class= "instruction_desc">Click away to explore new music</p>
       </div>
       <div class="col-md-4 vinyl">
         <%= image_tag 'vinyl.svg', :class => 'welcome_icon' %>
-        <p>Enjoy and create</p>
+        <p class="brief">Enjoy and create</p>
+        <p class= "instruction_desc">Push saved tracks into your spotify playlist</p>
       </div>
     </div>
     <%= link_to "Start your discovery", playlists_path, :class => "button start" %>
+    <p class="brief">Note: There will be music playing, so it is highly recommended to use earphones for a better experience</p>
   </div>
 
 <% else %>

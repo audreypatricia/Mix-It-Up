@@ -3,7 +3,9 @@
 }
 
 .playlist-tracks{
-  height: 3em;
+  height: 5em;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .playlist_name{
@@ -17,4 +19,8 @@
 
 .playlist-tracks:hover {
   border: 5px solid #1DB954;
+}
+
+h3.playlist_name{
+  margin: 3%;
 }

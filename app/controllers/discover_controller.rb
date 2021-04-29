@@ -37,7 +37,7 @@ class DiscoverController < ApplicationController
       @related_artist.push(related_artist.sample)
       @related_artist.uniq!
     end
-
+    
 
   end
 

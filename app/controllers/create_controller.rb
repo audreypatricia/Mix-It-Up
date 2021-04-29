@@ -29,7 +29,7 @@ class CreateController < ApplicationController
 
     # manipulate track_uri string into an array
     track_uris = track_uris.split(',')
-      
+
     # get user
     user = RSpotify::User.new(session[:user]);
 
@@ -50,7 +50,11 @@ class CreateController < ApplicationController
     playlist.add_tracks!(track_uris)
 
 
-    redirect_to save_path
+    redirect_to success_path
+  end
+
+  def success
+
   end
 
 end

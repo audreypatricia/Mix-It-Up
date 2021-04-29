@@ -7,10 +7,10 @@
 
   <div class="col-md-5">
   <%= form_with :url => save_path, :local => true do %>
-    <%= select_tag("playlist", options_for_select(@option_for_select, selected: @option_for_select.first)) %>
+    <%= select_tag("playlist", options_for_select(@option_for_select, selected: @option_for_select.first), :class => "custom-select") %>
     <%= hidden_field_tag 'track_uris' %>
 
-    <%= submit_tag "Add to playlist", :class => "add_tracks_button" %>
+    <%= submit_tag "Add to playlist", :class => "btn btn-outline-success add_tracks_button" %>
   <% end %>
 
   </div>
