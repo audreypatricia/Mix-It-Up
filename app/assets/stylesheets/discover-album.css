@@ -1,0 +1,19 @@
+.headers{
+  font-size: 12px;
+  color: #C0C0C0;
+}
+
+.discover_album{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.album_cover{
+  height: 18em;
+  margin-top: 2%;
+
+}
+
+.album_info{
+  padding-left:8%;
+}

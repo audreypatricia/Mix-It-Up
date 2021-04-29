@@ -1,3 +1,68 @@
-.thumb {
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.logo_header{
+  font-family: 'Pacifico', cursive;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #1DB954;
+}
+
+h1, h2, h3, h4{
+  color: #1DB954;
+}
+
+.item img.thumb {
   height: 12em;
+}
+
+.track_list img.pinky {
+  height:4em;
+}
+
+.album {
+  height: 8em;
+
+}
+
+.artist {
+  border-radius: 50%;
+  width: 5em;
+
+}
+
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 10em;
+    margin-bottom: 5px
+}
+
+.caption {
+    display: block;
+}
+
+.track_list{
+  display: flex;
+  margin: 5px 0px;
+}
+
+.track_list span {
+  margin-top: 23px;
+  margin-left: 15px;
+}
+
+.nav-logo{
+  height: 2em;
 }

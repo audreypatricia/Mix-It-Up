@@ -1,11 +1,19 @@
-<h1><%= @playlist.name %> tracks </h1>
+<h3 class="playlist_name"><%= @playlist.name %> tracks </h3>
 
-<ol>
-  <% @tracks.each do |track| %>
-    <li><%= track.name %></li>
+<% num_of_tracks = @tracks.length %>
+<% num = num_of_tracks / 2 %>
+
+<div class="tracks_list">
+
+  <% @tracks.each_with_index do |track, index| %>
+    <div class="track">
+      <% if track.album.images != nil %>
+        <%= image_tag track.album.images.first["url"], :class => "playlist-tracks", :id => "#{index}" %>
+      <% else %>
+        <%= image_tag 'no_image.png', :class => "playlist-tracks", :id => "#{index}" %>
+      <% end %>
+      <%= link_to track.name, discover_path(id: track.artists.first.id) %>
+    </div>
   <% end %>
-</ol>
 
-<% @tracks.each do |track| %>
-  <%= image_tag track.album.images.first["url"], :class => "thumb" %>
-<% end %>
+</div>

@@ -1,0 +1,21 @@
+<div class="discover_album row">
+  <div class="col-md-6 album_info">
+    <p class="headers">Album name:</p>
+    <h2><%= @album.name %></h2>
+    <p class="headers">Release date:</p>
+    <p><%= @album.release_date %></p>
+    <p class="headers">Artist: </p>
+    <%= image_tag @album.artists.first.images.first["url"], :class => 'artist'  %>
+  </div>
+  <div class="col-md-6 album_cover">
+    <%= image_tag @album.images.first["url"], :class => 'album_cover' %>
+  </div>
+</div>
+
+
+<% @tracks.each_with_index do |track, index| %>
+  <div class="track_list">
+    <%= image_tag track.album.images.first["url"], :class => 'playlist-tracks pinky', :id => "#{index}" %>
+    <span><%= track.name %></span>
+  </div>
+<% end %>

@@ -1,17 +1,17 @@
-console.log("hello")
 
-// audio = new Audio('https://p.scdn.co/mp3-preview/905eb6019a94be6a3f637ac5c6c3521abdc56c28?cid=9fec3533ed784157ae0ede2d30fcdc02');
 
-// audio.play();
-// $('.test').on( "click", function() {
-//   console.log( "it works");
-// });
+
 $(document).ready(function(){
 
+// testing gon
+  playlistName = gon.playlistName
 
-  $('button').click(function(){
-    audio = new Audio('https://p.scdn.co/mp3-preview/905eb6019a94be6a3f637ac5c6c3521abdc56c28?cid=9fec3533ed784157ae0ede2d30fcdc02');
-    audio.play();
+  $('.logout').click(function(){
+    const url = 'https://accounts.spotify.com/en/logout'
+    const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=500,top=40,left=40')
+    window.location.href = 'http://localhost:3000/';
+    setTimeout(() => spotifyLogoutWindow.close(), 1000);
+    localStorage.clear();
   });
 
 });

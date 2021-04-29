@@ -1,3 +1,31 @@
-<h1>Welcome</h1>
 
-<%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+<% if session[:user].present? %>
+  <div class="welcome-container">
+    <h1>Welcome <%= @spotify_user.display_name %> 👋</h1>
+    <h4>Want to discover new music to your taste fast?</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag 'hover.svg', :class => 'welcome_icon' %>
+        <p>Hover to listen</p>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag 'click.svg', :class => 'welcome_icon' %>
+        <p>Click to dive deeper</p>
+      </div>
+      <div class="col-md-4 vinyl">
+        <%= image_tag 'vinyl.svg', :class => 'welcome_icon' %>
+        <p>Enjoy and create</p>
+      </div>
+    </div>
+    <%= link_to "Start your discovery", playlists_path, :class => "button start" %>
+  </div>
+
+<% else %>
+  <div class="welcome-container">
+    <%= image_tag 'Spotify_Logo.png', :class => 'spotify_logo' %>
+    <span class="collab">X</span>
+    <%= image_tag 'logo.svg', :class => 'welcome-logo' %>
+    <h1 class="logo_header">Mix It Up</h1>
+    <%= link_to 'Sign in with Spotify', '/auth/spotify' if session[:user].present? == false %>
+  </div>
+<% end %>

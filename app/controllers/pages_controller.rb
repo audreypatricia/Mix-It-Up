@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @spotify_user = RSpotify::User.new(session[:user]) if session[:user].present?
 
   end
 

@@ -1,0 +1,23 @@
+.playlist-container{
+  margin-top: 5%;
+}
+
+.playlist_img{
+  height: 7em;
+}
+
+.playlist_header{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  color: #1DB954;
+  text-align: center;
+}
+
+.playlist_title{
+  margin: 5px;
+  padding-left: 20px;
+}
+
+.playlist_images{
+  padding-right: 15px;
+}

@@ -1,0 +1,24 @@
+#saved-tracks .saved_images{
+  display: inline;
+  width: 3em;
+}
+
+.saved_track_item{
+  display: inline;
+  padding-left: 10px;
+}
+
+.saved_track_artist{
+  color: #DFDFDF;
+  font-size: 12px;
+}
+
+.saved_tracks_header {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 3%;
+}
+
+.hidden {
+  visibility: hidden;
+}

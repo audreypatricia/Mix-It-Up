@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   get '/discover' => 'discover#show'
+  get 'discover/albums' => 'discover#albums'
+  get 'discover/artist' => 'discover#artist'
 
+  # get '/create' => 'create#create'
+
+  get '/save' => 'create#create'
+  post '/save' => 'create#playlist'
 
 end
