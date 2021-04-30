@@ -1,12 +1,13 @@
 $(document).ready(function(){
 
-
+// get all elements that should play music
     tracks = $('.playlist-tracks');
 
     if(tracks === 0){
       return;
     }
 
+// putting hover event listeners to each element
   for(let i = 0; i < tracks.length; i++){
     let $track = $(tracks[i]);
     if(gon.track_previews[i] != null){
@@ -19,6 +20,7 @@ $(document).ready(function(){
       });
     } else {
       $track.hover(function(){
+        // reveals "no music to display" snackbar when the track_preview is nil
         console.log("no music");
         let snackbar = document.getElementById("music-snackbar");
         snackbar.className = "show";
@@ -27,22 +29,5 @@ $(document).ready(function(){
     }
 
   }
-
-
-    // $($(".playlist-tracks")[0]).on("click", function() {
-    //   let audio = new Audio(gon.track_previews[0]);
-    //   audio.play();
-    // });
-    //
-    // $($(".playlist-tracks")[1]).on("click", function() {
-    //   let audio = new Audio(gon.track_previews[1]);
-    //   audio.play();
-    // });
-    //
-    // $($(".playlist-tracks")[2]).on("click", function() {
-    //   let audio = new Audio(gon.track_previews[2]);
-    //   audio.play();
-    // });
-
 
 });

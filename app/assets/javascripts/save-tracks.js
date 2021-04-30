@@ -3,6 +3,7 @@ $(document).ready(function(){
 
   $('.create_playlist').attr("placeholder", "New playlist name");
 
+// get saved track data on every page
   if(localStorage.getItem("saved_uris") === null){
     saved_uris = [];
     saved_track_names = [];
@@ -23,7 +24,7 @@ $(document).ready(function(){
     return;
   }
 
-
+// setting a click event listener, when they click on tracks this data gets pushed onto saved tracks and then sets it again on local storage
   for(let i = 0; i < tracks.length; i++){
     let $track = $(tracks[i]);
     $track.on('click', function(){

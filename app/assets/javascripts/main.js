@@ -3,9 +3,7 @@
 
 $(document).ready(function(){
 
-// testing gon
-  playlistName = gon.playlistName
-
+// function for logging the user out
   $('.logout').click(function(){
     const url = 'https://accounts.spotify.com/en/logout'
     const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=500,top=40,left=40')
