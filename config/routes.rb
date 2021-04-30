@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
   get '/auth/spotify/callback', to: 'users#index'
 
-  # resources :users, :only => [:index, :new, :create]
   resources :playlists, :only => [:index]
   resources :tracks, :only => [:index]
 
@@ -14,8 +13,6 @@ Rails.application.routes.draw do
   get '/discover' => 'discover#show'
   get 'discover/albums' => 'discover#albums'
   get 'discover/artist' => 'discover#artist'
-
-  # get '/create' => 'create#create'
 
   get '/save' => 'create#create'
   post '/save' => 'create#playlist'
