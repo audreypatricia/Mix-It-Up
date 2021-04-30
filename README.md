@@ -117,4 +117,4 @@ for(let i = 0; i < tracks.length; i++){
 
 ## Special Thanks ❤️
 
-Special thanks to @Joel Turnbull for helping with the dreaded OmniAuth and helping me understand the concept of passing data around from Ruby to Javascript and back to Ruby. Another special thanks to @Mai Nguyen for helping me with deployment and bugs.
+Special thanks to @Joel Turnbull (a.k.a the Blade) for helping with the dreaded OmniAuth and helping me understand the concept of passing data around from Ruby to Javascript and back to Ruby. Another special thanks to @Mai Nguyen (little-chi-mai) for helping me with deployment and bugs.
