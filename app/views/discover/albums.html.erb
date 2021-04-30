@@ -16,8 +16,7 @@
   <% @tracks.each_with_index do |track, index| %>
     <div class="col-md-6 track_list">
       <%= image_tag track.album.images.first["url"], :class => 'playlist-tracks pinky', :id => "#{index}" %>
-      <span><%= track.name %></span>
-      <%# <%= link_to track.name, discover_path(id: track.id), class => ''  %>
+      <%= link_to track.name, discover_path(id: track.artists.first.id), :class => "dive_deeper"%>
     </div>
   <% end %>
 </div>
